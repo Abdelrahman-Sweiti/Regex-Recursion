@@ -5,25 +5,24 @@
 /* Write a function that take a string and return true if the string only contain uppercase and lowercase
 characters (no numbers and symbols) and it should end with capital A else return false */
 
-function capitalA(s) {
+function capitalA(s){
+    let reg=/^[a-zA-Z ]*A$/;
+    return reg.test(s);
+}
 
-    if (/^[a-zA-Z]*[A]$/.test(s)) {
-      return true;
-    }
-    else {
-      return false;
-    }
-  }
+
   
 
 
 /* Write a function that take a string and return true if the the sting is following the emails pattern
 which end with io (example@example.io) */
 
-function ioEmail(email) {
-  const pattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}\.io$/;
-  return pattern.test(email);
-}
+function ioEmail(email){
+    let reg=/^[a-zA-Z]+@[a-zA-Z]+\.[io]{2}$/;
+     return reg.test(email);
+ }
+
+
 
 
 /* You have a text that contain image names with their extention you need to write a function to 
@@ -35,8 +34,11 @@ required extention are jpg, jpeg and png.
 
 function imagesSearcher(text){
     let arr = [];
-    // Add your logic.
-    return arr
+    let reg=/[a-zA-Z][a-zA-Z0-9]+\.(jpg|jpeg|png)\b/g;
+    if(text.match(reg))
+    arr=text.match(reg);
+
+    return arr;
 }
 
 

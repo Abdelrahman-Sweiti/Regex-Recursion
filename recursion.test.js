@@ -1,13 +1,11 @@
 /* Write a function to do the division operation without using the built-in division*/
 
 function division(number, dividedBy) {
-    let result = 0;
-    while (number >= dividedBy) {
-      number -= dividedBy;
-      result++;
-    }
-    return result;
-  }
+  if(number<dividedBy||dividedBy==0)
+  return 0;
+
+  return 1+division((number-dividedBy),dividedBy);
+}
   
 
 /* Write a function that implement Math.pow(x,n) but using recursion
@@ -37,14 +35,12 @@ Write a function that take n as parameter and return the nth element in the Fibo
 Example: n = 4 ==> 3, n= 0 ==> 0, n = 3 ==> 2 */
 
 function fibonacci(n) {
-    if (n === 0) {
-      return 0;
-    } else if (n === 1) {
-      return 1;
-    } else {
-      return fibonacci(n - 1) + fibonacci(n - 2);
-    }
-  }
+  if(n==0)
+  return 0;
+  else if(n==1)
+  return 1;
+  return fibonacci(n-1)+fibonacci(n-2);
+}
   
 
 /* Optional 
